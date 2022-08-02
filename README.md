@@ -41,9 +41,14 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-<!-- ## Resources Used 
+## Resources Used 
 
-Use this area to list referenced apis, etc -->
+### Technology
+
+### Media
+
+- Save Icon: Save by Warunk Icon from NounProject.com (Free Use with Embedded attribution if larger than 100px & Include in bibliography, caption, on item or tag)
+- Checkmark Icon: Ok by Mert Güler from NounProject.com (Free Use with Embedded attribution if larger than 100px & Include in bibliography, caption, on item or tag)
 
 
 

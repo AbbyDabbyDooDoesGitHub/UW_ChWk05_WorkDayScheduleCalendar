@@ -80,4 +80,61 @@
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
-  
+
+  .timeblocks {
+    border: 3px solid rgb(61, 61, 61);
+    border-left: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(61, 61, 61);
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 86px;
+  }
+
+  .timeblockElements {
+    display: inline-block;
+    margin: 0;
+    padding: 20px;
+    height: 80px;
+    position: relative;
+  }
+
+  #timeIdentifier {
+    background-color: white;
+    color: rgb(61, 61, 61);
+    font-size: 25px;
+    width: 15%;
+    /* top: -4px; */
+  }
+
+  .eventEntry {
+    background-color: white;
+    font-size: 20px;
+    width: 74%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    word-wrap: normal; 
+    top: -4px; 
+    border-radius: 0%;
+  }
+
+  .timeBtn {
+    background-color: #77dd77;
+    border-bottom-right-radius: 21px;
+    border-top-right-radius: 21px;
+    top: -6px; 
+    width: 10%;
+  }
+
+  .timeIcon {
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    margin-left: 10px;
+  }
+
+  #saveIcon {
+    display: none;
+  }
