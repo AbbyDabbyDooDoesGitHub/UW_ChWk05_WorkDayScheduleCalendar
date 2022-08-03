@@ -1,6 +1,7 @@
 // alert('JS File is connected');
 
 // ADDRESSES TO INDEX ITEMS
+var timeNow  = document.getElementById("currentDay");
 var tb_9am   = document.getElementById("eventEntryBox_9am");
 var tb_10am  = document.getElementById("eventEntryBox_10am");
 var tb_11am  = document.getElementById("eventEntryBox_11am");
