@@ -36,30 +36,30 @@
 
   <body>
 
-    <!-- <p>Event Data:
-      <textarea id="data" rows="10" cols="80">{{data}}</textarea>
-      </p>
-      rows and cols are required attributes. Don't ask me why. And if you're going to set the size in CSS, it's generally better to do it in em or % rather than px. -->
-
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead">TO BE FILLED BY JS DATE</p>
     </header>
 
+
     <div class="container">
 
       <!-- 9AM -->
-      <div class="timeblocks" id="timeblock9am timeblockFirst">
+      <div class="timeblocks" id="timeblock9am">
         <div class="timeblockElements" id="timeIdentifier">
           <h2>9am</h2>
         </div>
-        <input 
-          id="eventEntryBox_9am" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn9am">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon9am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon9am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_9am">No Events</textarea>
+        
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn9am timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon9am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn9am timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon9am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 10AM -->
@@ -67,12 +67,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>10am</h2>
         </div>
-        <input 
-          id="eventEntryBox_10am" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn10am">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon10am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon10am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_10am">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn10am timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon10am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn10am timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon10am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 11AM -->
@@ -80,12 +84,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>11am</h2>
         </div>
-        <input 
-          id="eventEntryBox_11am" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn11am">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon11am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon11am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_11am">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn11am timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon11am" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn11am timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon11am" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 12PM -->
@@ -93,12 +101,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>12pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_12pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn12pm">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon12pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon12pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_12pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn12pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon12pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn12pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon12pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 1PM -->
@@ -106,12 +118,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>1pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_1pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn1pm">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon1pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon1pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_1pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn1pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon1pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn1pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon1pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 2PM -->
@@ -119,12 +135,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>2pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_2pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn2pm">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon2pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon2pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_2pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn2pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon2pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn2pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon2pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 3PM -->
@@ -132,12 +152,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>3pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_3pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn3pm">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon3pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon3pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_3pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn3pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon3pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn3pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon3pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 4PM -->
@@ -145,12 +169,16 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>4pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_4pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn4pm">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon4pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon4pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_4pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn4pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon4pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn4pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon4pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <!-- 5PM -->
@@ -158,17 +186,22 @@
         <div class="timeblockElements" id="timeIdentifier">
           <h2>5pm</h2>
         </div>
-        <input 
-          id="eventEntryBox_5pm" class="timeblockElements eventEntry form-control" type="search" placeholder="Example Event" aria-label="Search">
-        <div class="timeblockElements timeBtn" id="timeBtn5pm timeblockLast">
-          <img class="timeblockElements timeIcon okIcon" id="okIcon5pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
-          <img class="timeblockElements timeIcon saveIcon" id="saveIcon5pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
+        
+        <textarea class="timeblockElements eventEntry" id="eventEntryBox_5pm">No Events</textarea>
+
+        <div class="timeblockElements timeBtn saveIcon" id="timeBtn5pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="saveIcon5pm" src="./Assets/Images/noun-save-4168843.png" alt="Save Icon: Save by Warunk Icon from NounProject.com">
         </div>
+        <div class="timeblockElements timeBtn okIcon" id="timeBtn5pm timeblockLast">
+          <img class="timeblockElements timeIcon" id="okIcon5pm" src="./Assets/Images/noun-ok-2014883.png" alt="Checkmark Icon: Ok by Mert Güler from NounProject.com">
+        </div>
+
       </div>
 
       <br>
 
     </div>
+    
 
     <!-- FOOTER -->
     <footer>

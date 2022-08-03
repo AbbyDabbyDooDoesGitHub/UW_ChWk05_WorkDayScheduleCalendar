@@ -3,12 +3,6 @@
     text-decoration: none;
   } */
 
-/* Media Query Example */
-/* @media screen and (max-width: 992px) {
-  h2 {
-      font-size: 200%;
-  } */
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -76,11 +70,15 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
+
+
+/* .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
+} */
 
+
+/* TIME BLOCK FORMATTING */
 .timeblocks {
   border: 4px solid rgb(61, 61, 61);
   border-bottom: 2px;
@@ -94,14 +92,7 @@ textarea {
   height: 86px;
 }
 
-#timeblockLast {
-  border-bottom: 4px;
-}
-
-#timeblockFirst {
-  border-top: 4px;
-}
-
+/* TIME BLOCK INTERNAL ELEMENTS */
 .timeblockElements {
   display: inline-block;
   margin: 0;
@@ -110,43 +101,57 @@ textarea {
   position: relative;
 }
 
+/* TIME IDENTIFIER */
 #timeIdentifier {
   background-color: white;
   color: rgb(61, 61, 61);
   font-size: 25px;
   width: 15%;
-  top: 3px;
+  top: -26px;
 }
 
+/* EVENT ENTRY DETAIL BOX */
 .eventEntry {
   background-color: white;
-  font-size: 20px;
+  font-size: 15px;
   width: 74%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 8px;
   border: none;
   word-wrap: normal; 
-  top: -1px; 
+  top: 3px; 
   border-radius: 0%;
 }
 
+/* SAVE/OKAY BTN */
 .timeBtn {
   background-color: #77dd77;
   border-bottom-right-radius: 21px;
   border-top-right-radius: 21px;
-  top: -3px; 
+  top: -32px;
   width: 10%;
 }
 
+/* ICON FORMATTING */
 .timeIcon {
   width: 43px;
   height: 43px;
   padding: 0;
-  margin-left: 10px;
+  margin-left: 2px;
 }
 
+/* HIDE THE SAVE ICON BY DEFAULT */
 .saveIcon {
   display: none;
+}
+
+/* HIDE THE OK ICON - UNCOMMENT OUT TO CHECK */
+/* .okIcon {
+  display: none;
+} */
+
+/* MAKE COLOR CHANGE ON HOVER */
+.saveIcon:hover {
+  background-color: #7e77dd;
 }
 
 
@@ -166,3 +171,115 @@ textarea {
   margin-bottom: 0%;
   margin-top: 15px;
 }
+
+
+/* MEDIA QUERIES TO HANDLE DIFFERENT SCREEN SIZES */
+@media screen and (max-width: 992px) {
+
+  h2 {
+    font-size: 22px;
+  }
+
+  /* TIME IDENTIFIER */
+  #timeIdentifier {
+    padding-left: 12px;
+    width: 12%;
+    top: -35px;
+  }
+
+  /* EVENT ENTRY DETAIL BOX */
+  .eventEntry {
+    width: 74%;
+  }
+
+  /* SAVE/OKAY BTN */
+  .timeBtn {
+    width: 12.5%;
+  }
+
+  /* ICON FORMATTING */
+  .timeIcon {
+    margin-left: 0px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* TIME IDENTIFIER */
+  #timeIdentifier {
+    padding-left: 8px;
+    top: -40px;
+  }
+
+  /* EVENT ENTRY DETAIL BOX */
+  .eventEntry {
+    width: 72%;
+  }
+
+  /* SAVE/OKAY BTN */
+  .timeBtn {
+    width: 14%;
+    top: -34px;
+  }
+
+/* ICON FORMATTING */
+.timeIcon {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin-left: -5px;
+}
+}
+
+@media screen and (max-width: 530px) {
+
+  h2 {
+    font-size: 16px;
+  }
+
+  /* TIME IDENTIFIER */
+  #timeIdentifier {
+    padding-left: 2px;
+    top: -42px;
+  }
+
+  /* EVENT ENTRY DETAIL BOX */
+  .eventEntry {
+    width: 72%;
+  }
+
+/* ICON FORMATTING */
+.timeIcon {
+  margin-left: -10px;
+}
+}
+
+@media screen and (max-width: 467px) {
+
+  /* EVENT ENTRY DETAIL BOX */
+  .eventEntry {
+    width: 70%;
+  }
+
+  /* SAVE/OKAY BTN */
+  .timeBtn {
+    width: 15%;
+  }
+
+/* ICON FORMATTING */
+.timeIcon {
+  margin-left: -10px;
+}
+}
+
+
+/* Media Query Example */
+/* @media screen and (max-width: 992px) {
+  h2 {
+      font-size: 200%;
+  } */
