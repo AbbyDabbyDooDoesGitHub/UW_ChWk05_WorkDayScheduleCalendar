@@ -49,17 +49,14 @@ textarea {
 
 .past {
   background-color: #d3d3d3;
-  color: white;
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
 }
 
 .saveBtn {
@@ -112,7 +109,7 @@ textarea {
 
 /* EVENT ENTRY DETAIL BOX */
 .eventEntry {
-  background-color: white;
+  /* background-color: white; */
   font-size: 15px;
   width: 74%;
   padding: 8px;
@@ -124,11 +121,14 @@ textarea {
 
 /* SAVE/OKAY BTN */
 .timeBtn {
-  background-color: #77dd77;
   border-bottom-right-radius: 21px;
   border-top-right-radius: 21px;
   top: -32px;
   width: 10%;
+}
+
+.saveIcon {
+  background-color: #7e77dd;
 }
 
 /* ICON FORMATTING */
@@ -140,9 +140,9 @@ textarea {
 }
 
 /* HIDE THE SAVE ICON BY DEFAULT */
-.saveIcon {
+/* .saveIcon {
   display: none;
-}
+} */
 
 /* HIDE THE OK ICON - UNCOMMENT OUT TO CHECK */
 /* .okIcon {
@@ -151,7 +151,7 @@ textarea {
 
 /* MAKE COLOR CHANGE ON HOVER */
 .saveIcon:hover {
-  background-color: #7e77dd;
+  background-color: #675edf;
 }
 
 
