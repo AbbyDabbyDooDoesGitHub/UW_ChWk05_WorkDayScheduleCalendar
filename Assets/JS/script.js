@@ -34,16 +34,16 @@ var okBtn_4pm   = document.getElementById("okBtn4pm");
 var okBtn_5pm   = document.getElementById("okBtn5pm");
 
 // LOCAL STORAGE VARIABLES
-const todayIs   = localStorage.getItem("todayIs");
-const event9am  = localStorage.getItem("eventEntryBox_9am");
-const event10am = localStorage.getItem("eventEntryBox_10am");
-const event11am = localStorage.getItem("eventEntryBox_11am");
-const event12pm = localStorage.getItem("eventEntryBox_12pm");
-const event1pm  = localStorage.getItem("eventEntryBox_1pm");
-const event2pm  = localStorage.getItem("eventEntryBox_2pm");
-const event3pm  = localStorage.getItem("eventEntryBox_3pm");
-const event4pm  = localStorage.getItem("eventEntryBox_4pm");
-const event5pm  = localStorage.getItem("eventEntryBox_5pm");
+var todayIs   = localStorage.getItem("todayIs");
+var event9am  = localStorage.getItem("eventEntryBox_9am");
+var event10am = localStorage.getItem("eventEntryBox_10am");
+var event11am = localStorage.getItem("eventEntryBox_11am");
+var event12pm = localStorage.getItem("eventEntryBox_12pm");
+var event1pm  = localStorage.getItem("eventEntryBox_1pm");
+var event2pm  = localStorage.getItem("eventEntryBox_2pm");
+var event3pm  = localStorage.getItem("eventEntryBox_3pm");
+var event4pm  = localStorage.getItem("eventEntryBox_4pm");
+var event5pm  = localStorage.getItem("eventEntryBox_5pm");
 
 // TIME VARIABLES
 var currentTime = moment();
@@ -51,32 +51,43 @@ var pastTime    = "past";
 var presentTime = "present";
 var futureTime  = "future";
 
-console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-console.log("CURRENT TIME: " + moment(currentTime).format("MMMM Do, YYYY"));
-console.log("CURRENT TIME: " + moment(currentTime).format("H"));
+// console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+// console.log("CURRENT TIME: " + moment(currentTime).format("MMMM Do, YYYY"));
+// console.log("CURRENT TIME: " + moment(currentTime).format("H"));
+
+svBtn_9am.addEventListener("click",function() {setLocalStorageEvent(tb_9am,"eventEntryBox_9am",event9am, svBtn_9am, okBtn_9am)});
+svBtn_10am.addEventListener("click",function() {setLocalStorageEvent(tb_10am,"eventEntryBox_10am",event10am, svBtn_10am, okBtn_10am)});
+svBtn_11am.addEventListener("click",function() {setLocalStorageEvent(tb_11am,"eventEntryBox_11am",event11am, svBtn_11am, okBtn_11am)});
+svBtn_12pm.addEventListener("click",function() {setLocalStorageEvent(tb_12pm,"eventEntryBox_12pm",event12pm, svBtn_12pm, okBtn_12pm)});
+svBtn_1pm.addEventListener("click",function() {setLocalStorageEvent(tb_1pm,"eventEntryBox_1pm",event1pm, svBtn_1pm, okBtn_1pm)});
+svBtn_2pm.addEventListener("click",function() {setLocalStorageEvent(tb_2pm,"eventEntryBox_2pm",event2pm, svBtn_2pm, okBtn_2pm)});
+svBtn_3pm.addEventListener("click",function() {setLocalStorageEvent(tb_3pm,"eventEntryBox_3pm",event3pm, svBtn_3pm, okBtn_3pm)});
+svBtn_4pm.addEventListener("click",function() {setLocalStorageEvent(tb_4pm,"eventEntryBox_4pm",event4pm, svBtn_4pm, okBtn_4pm)});
+svBtn_5pm.addEventListener("click",function() {setLocalStorageEvent(tb_5pm,"eventEntryBox_5pm",event5pm, svBtn_5pm, okBtn_5pm)});
+
 
 getDay();
 updateTimeSlots ();
 
 function updateTimeSlots () {
     var thisHour = moment(currentTime).format("H");
-    thisHour = "13";
+    // thisHour = "13";
 
     if (thisHour < 9) {
-        console.log("< 9");
+        // console.log("< 9");
         updateAllClasses (
             futureTime,futureTime,futureTime,futureTime,futureTime,futureTime,futureTime,futureTime,futureTime
             );
 
     } else if (thisHour == 9) {
-        console.log("== 9");
+        // console.log("== 9");
         updateAllClasses (
             presentTime,
             futureTime,futureTime,futureTime,futureTime,futureTime,futureTime,futureTime,futureTime
             );
 
     } else if (thisHour == 10) {
-        console.log("== 10");
+        // console.log("== 10");
         updateAllClasses (
             pastTime,
             presentTime,
@@ -84,7 +95,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 11) {
-        console.log("== 11");
+        // console.log("== 11");
         updateAllClasses (
             pastTime,pastTime,
             presentTime,
@@ -92,7 +103,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 12) {
-        console.log("== 12");
+        // console.log("== 12");
         updateAllClasses (
             pastTime,pastTime,pastTime,
             presentTime,
@@ -100,7 +111,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 13) {
-        console.log("== 13");
+        // console.log("== 13");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,
             presentTime,
@@ -108,7 +119,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 14) {
-        console.log("== 14");
+        // console.log("== 14");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,
             presentTime,
@@ -116,7 +127,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 15) {
-        console.log("== 15");
+        // console.log("== 15");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,
             presentTime,
@@ -124,7 +135,7 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 16) {
-        console.log("== 16");
+        // console.log("== 16");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,
             presentTime,
@@ -132,14 +143,14 @@ function updateTimeSlots () {
             );
 
     } else if (thisHour == 17) {
-        console.log("== 17");
+        // console.log("== 17");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,
             presentTime
             );
 
     } else if (thisHour > 17) {
-        console.log("> 17");
+        // console.log("> 17");
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime
             );
@@ -190,7 +201,7 @@ function updateAllClasses (c9,c10,c11,c12,c13,c14,c15,c16,c17) {
 
     addClass(c16, tb_4pm);
     addClass(c16, okBtn_4pm);
-    
+
     addClass(c17, tb_5pm);
     addClass(c17, okBtn_5pm);
 }
@@ -221,14 +232,33 @@ function removeClass (classToRemove,address) {
 // GET LOCAL STORAGE SPECIFIC EVENT
 function getScheduledEvents(entryAddress, getLocalStorage) {
 
-    if (getLocalStorage == null) {
+    if (getLocalStorage == null || getLocalStorage === "") {
         entryAddress.innerHTML = "";
     } else {
-        entryAddress.innerHTML = getLocalStorage;
+        entryAddress.innerHTML = JSON.parse(getLocalStorage);
     }
 
 }
 
+function setLocalStorageEvent (entryAddress, localStorageName, getLocalStorage, svBtn, okBtn) {
+
+    console.log(localStorageName+"btn was clicked");
+
+    var curText = entryAddress.value;
+    // curTextString = JSON.stringify(curText);
+
+    // Update the value to "tuna"
+    // localStorage.setItem(localStorageName, curTextString);
+    localStorage.setItem(localStorageName, JSON.stringify(curText));
+    getLocalStorage = localStorage.getItem(localStorageName);
+
+    compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn);
+    getLocalStorageParsed = JSON.parse(getLocalStorage);
+
+    console.log(localStorageName+" in local storage is "+getLocalStorage+" & curText is "+curText);
+    // compareAllScheduledEvents();
+}
+getAllScheduledEvents()
 // GET ALL LOCAL STORAGE EVENTS
 function getAllScheduledEvents() {
 
@@ -266,6 +296,7 @@ function resetAllScheduledEvents() {
 compareAllScheduledEvents();
 
 function compareAllScheduledEvents() {
+    // console.log("compareALLScheduledEvents ran");
 
     compareScheduledEvents(tb_9am, event9am, svBtn_9am, okBtn_9am);
     compareScheduledEvents(tb_10am, event10am, svBtn_10am, okBtn_10am);
@@ -282,32 +313,53 @@ function compareAllScheduledEvents() {
 // compareScheduledEvents(tb_10am, event10am, svBtn_10am, okBtn_10am);
 
 function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
-    var curText = entryAddress.innerHTML;
 
-    console.log("curText is " + curText);
-    console.log("getLocalStorage is " + getLocalStorage);
+    var getLocalStorageParsed = JSON.parse(getLocalStorage);
 
-    if (getLocalStorage == null) {
+    // var inputVal = entryAddress.value;
+    var curText = entryAddress.value;
+    // var curText = entryAddress.innerHTML;
+
+    // console.log("inputVal is "+inputVal);
+    // console.log("curText is " + curText);
+
+    // console.log("compareScheduledEvents ran");
+
+    // console.log("curText is " + curText);
+    // console.log("getLocalStorage is " + getLocalStorage);
+
+    if (getLocalStorageParsed == null) {
         if(curText == "" || curText == null) {
+            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+            
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
         } else {
+            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+
             // save on, hide checkmark
             okBtn.style.display = "none";
             svBtn.style.display = "inline-block";
         }
         // entryAddress.innerHTML = "";
     } else {
-        if (curText == getLocalStorage) {
+        if (curText == getLocalStorageParsed) {
+            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
         } else {
+            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+
             // save on, hide checkmark
             okBtn.style.display = "none";
             svBtn.style.display = "inline-block";
         }
     }
 }
+
+// CHECKS FOR CHANGES TO EVENTS
+myInterval = setInterval(compareAllScheduledEvents, 4000);
 
