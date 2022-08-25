@@ -70,7 +70,8 @@ svBtn_5pm.addEventListener("click",function() {setLocalStorageEvent(tb_5pm,"even
 getDate();
 checkDate();
 updateTimeSlots();
-getAllScheduledEvents()
+getAllScheduledEvents();
+compareAllScheduledEvents();
 
 // TIME STUFF AND DATE CONTROL ------------------------------------------
 // UPDATE IF TIME IS PRESENT, PAST, OR FUTURE
@@ -191,20 +192,45 @@ function checkDate() {
         console.log("TRUE: dates are the same! Actual is "+ todayActual + " and LS is " + todayLS);
 
     } else {
+        var lastLS = todayLS;
 
         console.log("FALSE: dates are NOT the same! Actual is "+ todayActual + " and LS is " + todayLS);
-    
-        // SAVE TODAY'S ACTUAL DATE OVER THE LOCAL STORAGE DATE
-        localStorage.setItem("todayLS", JSON.stringify(todayActual));
 
-        todayLS = JSON.parse(localStorage.getItem("todayLS"));
-        console.log("New local storage date is " + todayLS);
-    
-        // MAYBE ADD AN OPTION TO KEEP LOCAL STORAGE?
-        resetAllScheduledEvents();
-    
-        // UPDATE PAGE DISPLAYED DATE TO TODAY
-        getDate();
+        var allSavedEvents = event9am + event10am + event11am + event12pm + event1pm + event2pm + event3pm + event4pm  + event5pm;
+        console.log("allSavedEvents is " + allSavedEvents);
+
+        // CHECK IF THERE IS ANY SAVED EVENT DATA
+        if (allSavedEvents == null || allSavedEvents == 0) {
+            console.log("allSavedEvents is null or 0");
+            
+        } else {
+
+            // OPTION TO KEEP LOCAL STORAGE WHEN UPDATING THE DATE
+            if (confirm("It looks like you may have saved data from "+ lastLS + ".\nThis page will be updating to reflect that it is now " + todayActual +".\nPress OK to clear previous event entries, or cancel to keep previous entries.") == true) {
+
+                // SAVE TODAY'S ACTUAL DATE OVER THE LOCAL STORAGE DATE
+                localStorage.setItem("todayLS", JSON.stringify(todayActual));
+
+                todayLS = JSON.parse(localStorage.getItem("todayLS"));
+                console.log("New local storage date is " + todayLS);
+
+                resetAllScheduledEvents();
+                location.reload();
+
+            } else {
+
+                // SAVE TODAY'S ACTUAL DATE OVER THE LOCAL STORAGE DATE
+                localStorage.setItem("todayLS", JSON.stringify(todayActual));
+
+                todayLS = JSON.parse(localStorage.getItem("todayLS"));
+                console.log("New local storage date is " + todayLS);
+
+                getDate();
+                getAllScheduledEvents();
+
+            }
+
+        }
 
     }
 
@@ -416,5 +442,5 @@ function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
 // INTERVALS TO KEEP THINGS UP TO DATE ----------------------------------
 // CHECKS FOR CHANGES TO EVENTS
 myInterval1 = setInterval(compareAllScheduledEvents, 2000);
-myInterval2 = setInterval(checkDate, 4000);
+myInterval2 = setInterval(checkDate, 60000);
 
