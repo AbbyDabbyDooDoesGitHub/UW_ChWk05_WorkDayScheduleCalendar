@@ -1,37 +1,37 @@
 // alert('JS File is connected');
 
 // ADDRESSES TO INDEX ITEMS
-var dayNow   = document.getElementById("currentDay");
+var dayNow  = document.getElementById("currentDay");
 
-var tb_9am   = document.getElementById("eventEntryBox_9am");
-var tb_10am  = document.getElementById("eventEntryBox_10am");
-var tb_11am  = document.getElementById("eventEntryBox_11am");
-var tb_12pm  = document.getElementById("eventEntryBox_12pm");
-var tb_1pm   = document.getElementById("eventEntryBox_1pm");
-var tb_2pm   = document.getElementById("eventEntryBox_2pm");
-var tb_3pm   = document.getElementById("eventEntryBox_3pm");
-var tb_4pm   = document.getElementById("eventEntryBox_4pm");
-var tb_5pm   = document.getElementById("eventEntryBox_5pm");
+var tb_9am  = document.getElementById("eventEntryBox_9am");
+var tb_10am = document.getElementById("eventEntryBox_10am");
+var tb_11am = document.getElementById("eventEntryBox_11am");
+var tb_12pm = document.getElementById("eventEntryBox_12pm");
+var tb_1pm  = document.getElementById("eventEntryBox_1pm");
+var tb_2pm  = document.getElementById("eventEntryBox_2pm");
+var tb_3pm  = document.getElementById("eventEntryBox_3pm");
+var tb_4pm  = document.getElementById("eventEntryBox_4pm");
+var tb_5pm  = document.getElementById("eventEntryBox_5pm");
 
-var svBtn_9am   = document.getElementById("saveBtn9am");
-var svBtn_10am  = document.getElementById("saveBtn10am");
-var svBtn_11am  = document.getElementById("saveBtn11am");
-var svBtn_12pm  = document.getElementById("saveBtn12pm");
-var svBtn_1pm   = document.getElementById("saveBtn1pm");
-var svBtn_2pm   = document.getElementById("saveBtn2pm");
-var svBtn_3pm   = document.getElementById("saveBtn3pm");
-var svBtn_4pm   = document.getElementById("saveBtn4pm");
-var svBtn_5pm   = document.getElementById("saveBtn5pm");
+var svBtn_9am  = document.getElementById("saveBtn9am");
+var svBtn_10am = document.getElementById("saveBtn10am");
+var svBtn_11am = document.getElementById("saveBtn11am");
+var svBtn_12pm = document.getElementById("saveBtn12pm");
+var svBtn_1pm  = document.getElementById("saveBtn1pm");
+var svBtn_2pm  = document.getElementById("saveBtn2pm");
+var svBtn_3pm  = document.getElementById("saveBtn3pm");
+var svBtn_4pm  = document.getElementById("saveBtn4pm");
+var svBtn_5pm  = document.getElementById("saveBtn5pm");
 
-var okBtn_9am   = document.getElementById("okBtn9am");
-var okBtn_10am  = document.getElementById("okBtn10am");
-var okBtn_11am  = document.getElementById("okBtn11am");
-var okBtn_12pm  = document.getElementById("okBtn12pm");
-var okBtn_1pm   = document.getElementById("okBtn1pm");
-var okBtn_2pm   = document.getElementById("okBtn2pm");
-var okBtn_3pm   = document.getElementById("okBtn3pm");
-var okBtn_4pm   = document.getElementById("okBtn4pm");
-var okBtn_5pm   = document.getElementById("okBtn5pm");
+var okBtn_9am  = document.getElementById("okBtn9am");
+var okBtn_10am = document.getElementById("okBtn10am");
+var okBtn_11am = document.getElementById("okBtn11am");
+var okBtn_12pm = document.getElementById("okBtn12pm");
+var okBtn_1pm  = document.getElementById("okBtn1pm");
+var okBtn_2pm  = document.getElementById("okBtn2pm");
+var okBtn_3pm  = document.getElementById("okBtn3pm");
+var okBtn_4pm  = document.getElementById("okBtn4pm");
+var okBtn_5pm  = document.getElementById("okBtn5pm");
 
 // LOCAL STORAGE VARIABLES
 var todayLS   = localStorage.getItem("todayLS");
