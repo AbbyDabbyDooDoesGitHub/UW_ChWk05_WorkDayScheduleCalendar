@@ -34,7 +34,7 @@ var okBtn_4pm   = document.getElementById("okBtn4pm");
 var okBtn_5pm   = document.getElementById("okBtn5pm");
 
 // LOCAL STORAGE VARIABLES
-var todayIs   = localStorage.getItem("todayIs");
+var todayLS   = localStorage.getItem("todayLS");
 var event9am  = localStorage.getItem("eventEntryBox_9am");
 var event10am = localStorage.getItem("eventEntryBox_10am");
 var event11am = localStorage.getItem("eventEntryBox_11am");
@@ -55,6 +55,7 @@ var futureTime  = "future";
 // console.log("CURRENT TIME: " + moment(currentTime).format("MMMM Do, YYYY"));
 // console.log("CURRENT TIME: " + moment(currentTime).format("H"));
 
+// ADD EVENT LISTENERS TO BUTTONS ---------------------------------------
 svBtn_9am.addEventListener("click",function() {setLocalStorageEvent(tb_9am,"eventEntryBox_9am",event9am, svBtn_9am, okBtn_9am)});
 svBtn_10am.addEventListener("click",function() {setLocalStorageEvent(tb_10am,"eventEntryBox_10am",event10am, svBtn_10am, okBtn_10am)});
 svBtn_11am.addEventListener("click",function() {setLocalStorageEvent(tb_11am,"eventEntryBox_11am",event11am, svBtn_11am, okBtn_11am)});
@@ -65,8 +66,9 @@ svBtn_3pm.addEventListener("click",function() {setLocalStorageEvent(tb_3pm,"even
 svBtn_4pm.addEventListener("click",function() {setLocalStorageEvent(tb_4pm,"eventEntryBox_4pm",event4pm, svBtn_4pm, okBtn_4pm)});
 svBtn_5pm.addEventListener("click",function() {setLocalStorageEvent(tb_5pm,"eventEntryBox_5pm",event5pm, svBtn_5pm, okBtn_5pm)});
 
-
-getDay();
+// FUNCTIONS TO DO ON OPEN ----------------------------------------------
+getDate();
+checkDate();
 updateTimeSlots ();
 
 function updateTimeSlots () {
@@ -159,8 +161,35 @@ function updateTimeSlots () {
 
 }
 
-function getDay() {
+function getDate() {
     dayNow.innerHTML = moment(currentTime).format("MMMM Do, YYYY");
+}
+
+function checkDate() {
+    var todayActual = moment(currentTime).format("MMMM Do, YYYY");
+    console.log("todayActual is " + todayActual);
+
+    var todayLS = JSON.parse(localStorage.getItem("todayLS"));
+    console.log("Local storage date is " + JSON.parse(localStorage.getItem("todayLS")) + " & " + todayLS);
+
+    todayLS = "";
+
+    if (todayLS == todayActual) {
+        console.log("TRUE: dates are the same! Actual is "+ todayActual + " and LS is " + todayLS);
+    } else {
+        console.log("FALSE: dates are NOT the same! Actual is "+ todayActual + " and LS is " + todayLS);
+    
+        localStorage.setItem("todayLS", JSON.stringify(todayActual));
+
+        todayLS = JSON.parse(localStorage.getItem("todayLS"));
+    
+        console.log("New local storage date is " + JSON.parse(localStorage.getItem("todayLS")) + " & " + todayLS);
+    
+        resetAllScheduledEvents();
+    
+        dayNow.innerHTML = todayActual;
+    }
+
 }
 
 // FORMATTING STUFF -------------------------------------------------
@@ -258,6 +287,7 @@ function setLocalStorageEvent (entryAddress, localStorageName, getLocalStorage, 
     console.log(localStorageName+" in local storage is "+getLocalStorage+" & curText is "+curText);
     // compareAllScheduledEvents();
 }
+
 getAllScheduledEvents()
 // GET ALL LOCAL STORAGE EVENTS
 function getAllScheduledEvents() {
@@ -279,15 +309,15 @@ function getAllScheduledEvents() {
 // RESET ALL LOCAL STORAGE EVENTS
 function resetAllScheduledEvents() {
 
-    localStorage.clear("eventEntryBox_9am");
-    localStorage.clear("eventEntryBox_10am");
-    localStorage.clear("eventEntryBox_11am");
-    localStorage.clear("eventEntryBox_12pm");
-    localStorage.clear("eventEntryBox_1pm");
-    localStorage.clear("eventEntryBox_2pm");
-    localStorage.clear("eventEntryBox_3pm");
-    localStorage.clear("eventEntryBox_4pm");
-    localStorage.clear("eventEntryBox_5pm");
+    localStorage.removeItem("eventEntryBox_9am");
+    localStorage.removeItem("eventEntryBox_10am");
+    localStorage.removeItem("eventEntryBox_11am");
+    localStorage.removeItem("eventEntryBox_12pm");
+    localStorage.removeItem("eventEntryBox_1pm");
+    localStorage.removeItem("eventEntryBox_2pm");
+    localStorage.removeItem("eventEntryBox_3pm");
+    localStorage.removeItem("eventEntryBox_4pm");
+    localStorage.removeItem("eventEntryBox_5pm");
 
     getAllScheduledEvents();
 
@@ -296,7 +326,17 @@ function resetAllScheduledEvents() {
 compareAllScheduledEvents();
 
 function compareAllScheduledEvents() {
-    // console.log("compareALLScheduledEvents ran");
+    console.log("compareALLScheduledEvents ran");
+
+    event9am  = localStorage.getItem("eventEntryBox_9am");
+    event10am = localStorage.getItem("eventEntryBox_10am");
+    event11am = localStorage.getItem("eventEntryBox_11am");
+    event12pm = localStorage.getItem("eventEntryBox_12pm");
+    event1pm  = localStorage.getItem("eventEntryBox_1pm");
+    event2pm  = localStorage.getItem("eventEntryBox_2pm");
+    event3pm  = localStorage.getItem("eventEntryBox_3pm");
+    event4pm  = localStorage.getItem("eventEntryBox_4pm");
+    event5pm  = localStorage.getItem("eventEntryBox_5pm");
 
     compareScheduledEvents(tb_9am, event9am, svBtn_9am, okBtn_9am);
     compareScheduledEvents(tb_10am, event10am, svBtn_10am, okBtn_10am);
@@ -330,13 +370,13 @@ function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
 
     if (getLocalStorageParsed == null) {
         if(curText == "" || curText == null) {
-            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+            // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
             
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
         } else {
-            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+            // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // save on, hide checkmark
             okBtn.style.display = "none";
@@ -345,13 +385,13 @@ function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
         // entryAddress.innerHTML = "";
     } else {
         if (curText == getLocalStorageParsed) {
-            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+            // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
         } else {
-            console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
+            // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // save on, hide checkmark
             okBtn.style.display = "none";
@@ -361,5 +401,6 @@ function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
 }
 
 // CHECKS FOR CHANGES TO EVENTS
-myInterval = setInterval(compareAllScheduledEvents, 4000);
+// myInterval  = setInterval(compareAllScheduledEvents, 4000);
+myInterval2 = setInterval(checkDate, 4000);
 
