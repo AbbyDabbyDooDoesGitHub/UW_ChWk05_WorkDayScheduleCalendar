@@ -69,10 +69,15 @@ svBtn_5pm.addEventListener("click",function() {setLocalStorageEvent(tb_5pm,"even
 // FUNCTIONS TO DO ON OPEN ----------------------------------------------
 getDate();
 checkDate();
-updateTimeSlots ();
+updateTimeSlots();
+getAllScheduledEvents()
 
+// TIME STUFF AND DATE CONTROL ------------------------------------------
+// UPDATE IF TIME IS PRESENT, PAST, OR FUTURE
 function updateTimeSlots () {
     var thisHour = moment(currentTime).format("H");
+
+    // UNCOMMENT OUT TO TEST ALL COLORS IF PAST THE TIME FRAME OF SCHEDULER
     // thisHour = "13";
 
     if (thisHour < 9) {
@@ -156,38 +161,51 @@ function updateTimeSlots () {
         updateAllClasses (
             pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime,pastTime
             );
-            
+
     }
 
 }
 
+// GET TODAYS DATE AND SET IT TO THE PAGE HTML
 function getDate() {
     dayNow.innerHTML = moment(currentTime).format("MMMM Do, YYYY");
 }
 
+// KEEP TODAY'S DATE ACCURATE
 function checkDate() {
+    // TODAY'S ACTUAL DATE
     var todayActual = moment(currentTime).format("MMMM Do, YYYY");
-    console.log("todayActual is " + todayActual);
 
+    // MOST RECENT DATE SAVED TO LOCAL STORAGE
     var todayLS = JSON.parse(localStorage.getItem("todayLS"));
-    console.log("Local storage date is " + JSON.parse(localStorage.getItem("todayLS")) + " & " + todayLS);
 
-    todayLS = "";
+    // console.log("todayActual is " + todayActual);
+    // console.log("Local storage date is " + JSON.parse(localStorage.getItem("todayLS")) + " & " + todayLS);
 
+    // UNCOMMENT OUT BELOW TO FORCE A FALSE RESULT AND TEST ELSE PATH
+    // todayLS = "";
+
+    // COMPARE ACTUAL DATE VS LAST SAVED DATE
     if (todayLS == todayActual) {
+
         console.log("TRUE: dates are the same! Actual is "+ todayActual + " and LS is " + todayLS);
+
     } else {
+
         console.log("FALSE: dates are NOT the same! Actual is "+ todayActual + " and LS is " + todayLS);
     
+        // SAVE TODAY'S ACTUAL DATE OVER THE LOCAL STORAGE DATE
         localStorage.setItem("todayLS", JSON.stringify(todayActual));
 
         todayLS = JSON.parse(localStorage.getItem("todayLS"));
+        console.log("New local storage date is " + todayLS);
     
-        console.log("New local storage date is " + JSON.parse(localStorage.getItem("todayLS")) + " & " + todayLS);
-    
+        // MAYBE ADD AN OPTION TO KEEP LOCAL STORAGE?
         resetAllScheduledEvents();
     
-        dayNow.innerHTML = todayActual;
+        // UPDATE PAGE DISPLAYED DATE TO TODAY
+        getDate();
+
     }
 
 }
@@ -205,7 +223,7 @@ function hide (section) {
     section.style.display = "none";
 }
 
-// UPDATE ALL CLASSES
+// UPDATE ALL CLASSES TO APPLY PAST, PRESENT, AND FUTURE COLORING
 function updateAllClasses (c9,c10,c11,c12,c13,c14,c15,c16,c17) {
     addClass(c9, tb_9am);
     addClass(c9, okBtn_9am);
@@ -235,7 +253,7 @@ function updateAllClasses (c9,c10,c11,c12,c13,c14,c15,c16,c17) {
     addClass(c17, okBtn_5pm);
 }
 
-// ADD CLASS TO HTML
+// ADD CLASS TO HTML TO ADD PAST, PRESENT, AND FUTURE COLORING
 function addClass (classToAdd,address) {
     if (classToAdd === pastTime) {
         address.classList.add(pastTime);
@@ -252,7 +270,7 @@ function addClass (classToAdd,address) {
     }
 }
 
-// REMOVE CLASS TO HTML
+// REMOVE CLASS TO HTML TO REMOVE COLORING FOR PAST, PRESENT, OR FUTURE
 function removeClass (classToRemove,address) {
     address.classList.remove(classToRemove);
 }
@@ -269,15 +287,13 @@ function getScheduledEvents(entryAddress, getLocalStorage) {
 
 }
 
+// SET TEXT FOR LOCAL STORAGE EVENT TIME SLOT
 function setLocalStorageEvent (entryAddress, localStorageName, getLocalStorage, svBtn, okBtn) {
 
-    console.log(localStorageName+"btn was clicked");
+    console.log("The " + localStorageName + " btn was clicked");
 
     var curText = entryAddress.value;
-    // curTextString = JSON.stringify(curText);
 
-    // Update the value to "tuna"
-    // localStorage.setItem(localStorageName, curTextString);
     localStorage.setItem(localStorageName, JSON.stringify(curText));
     getLocalStorage = localStorage.getItem(localStorageName);
 
@@ -285,11 +301,10 @@ function setLocalStorageEvent (entryAddress, localStorageName, getLocalStorage, 
     getLocalStorageParsed = JSON.parse(getLocalStorage);
 
     console.log(localStorageName+" in local storage is "+getLocalStorage+" & curText is "+curText);
-    // compareAllScheduledEvents();
 }
 
-getAllScheduledEvents()
-// GET ALL LOCAL STORAGE EVENTS
+
+// GET ALL LOCAL STORAGE EVENTS TO FILL SLOTS
 function getAllScheduledEvents() {
 
     getScheduledEvents(tb_9am, event9am);
@@ -304,6 +319,7 @@ function getAllScheduledEvents() {
 
 }
 
+// UNCOMMENT OUT TO CLEAR THE EVENTS FOR CLEAN SLATE
 // resetAllScheduledEvents()
 
 // RESET ALL LOCAL STORAGE EVENTS
@@ -323,9 +339,9 @@ function resetAllScheduledEvents() {
 
 }
 
-compareAllScheduledEvents();
-
+// COMPARE IF CURRENT TEXT IN BOX DIFFERS FROM LOCAL STORAGE
 function compareAllScheduledEvents() {
+
     console.log("compareALLScheduledEvents ran");
 
     event9am  = localStorage.getItem("eventEntryBox_9am");
@@ -350,23 +366,15 @@ function compareAllScheduledEvents() {
     
 }
 
-// compareScheduledEvents(tb_10am, event10am, svBtn_10am, okBtn_10am);
-
+// FUNCTION TO COMPARE A SINGLE EVENT SLOT TO LOCAL STORAGE
 function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
 
     var getLocalStorageParsed = JSON.parse(getLocalStorage);
-
-    // var inputVal = entryAddress.value;
     var curText = entryAddress.value;
-    // var curText = entryAddress.innerHTML;
-
-    // console.log("inputVal is "+inputVal);
-    // console.log("curText is " + curText);
 
     // console.log("compareScheduledEvents ran");
-
     // console.log("curText is " + curText);
-    // console.log("getLocalStorage is " + getLocalStorage);
+    // console.log("getLocalStorageParsed is " + getLocalStorageParsed);
 
     if (getLocalStorageParsed == null) {
         if(curText == "" || curText == null) {
@@ -375,32 +383,38 @@ function compareScheduledEvents(entryAddress, getLocalStorage, svBtn, okBtn) {
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
+
         } else {
             // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // save on, hide checkmark
             okBtn.style.display = "none";
             svBtn.style.display = "inline-block";
+
         }
-        // entryAddress.innerHTML = "";
+
     } else {
+
         if (curText == getLocalStorageParsed) {
             // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // check mark on, hide save
             okBtn.style.display = "inline-block";
             svBtn.style.display = "none";
+
         } else {
             // console.log("getLocalStorage is " + getLocalStorageParsed + ", curText is "+curText);
 
             // save on, hide checkmark
             okBtn.style.display = "none";
             svBtn.style.display = "inline-block";
+
         }
     }
 }
 
+// INTERVALS TO KEEP THINGS UP TO DATE ----------------------------------
 // CHECKS FOR CHANGES TO EVENTS
-// myInterval  = setInterval(compareAllScheduledEvents, 4000);
+myInterval1 = setInterval(compareAllScheduledEvents, 2000);
 myInterval2 = setInterval(checkDate, 4000);
 
