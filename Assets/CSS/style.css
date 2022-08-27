@@ -1,8 +1,3 @@
-/* Makes it so there's no underline under the hyperlink */
-/* a {
-    text-decoration: none;
-  } */
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -66,14 +61,6 @@ textarea {
   background-color: #06aed5;
   color: white;
 }
-
-
-
-/* .saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-} */
-
 
 /* TIME BLOCK FORMATTING */
 .timeblocks {
@@ -206,6 +193,10 @@ textarea {
 
 @media screen and (max-width: 768px) {
 
+  .display-3 {
+    font-size: 50px;
+  }
+
   h2 {
     font-size: 18px;
   }
@@ -238,6 +229,10 @@ textarea {
 
 @media screen and (max-width: 530px) {
 
+  .display-3 {
+    font-size: 35px;
+  }
+
   h2 {
     font-size: 16px;
   }
@@ -261,6 +256,18 @@ textarea {
 
 @media screen and (max-width: 467px) {
 
+  .display-3 {
+    font-size: 30px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
   /* EVENT ENTRY DETAIL BOX */
   .eventEntry {
     width: 70%;
@@ -271,15 +278,13 @@ textarea {
     width: 15%;
   }
 
-/* ICON FORMATTING */
-.timeIcon {
-  margin-left: -10px;
-}
-}
+  /* ICON FORMATTING */
+  .timeIcon {
+    margin-left: -14px;
+  }
 
-
-/* Media Query Example */
-/* @media screen and (max-width: 992px) {
-  h2 {
-      font-size: 200%;
-  } */
+  #timeIdentifier {
+    padding-left: 1px;
+    top: -44px;
+  }
+}
