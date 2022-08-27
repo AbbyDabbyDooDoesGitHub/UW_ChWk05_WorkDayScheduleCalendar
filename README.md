@@ -41,9 +41,9 @@ THEN the saved events persist
 ## Resources Used 
 
 ### Technology
--[Moment.js](https://momentjs.com/)
--[Bootstrap Framework](https://getbootstrap.com/)
--[jQuery Library](https://jquery.com/)
+- [Moment.js](https://momentjs.com/)
+- [Bootstrap Framework](https://getbootstrap.com/)
+- [jQuery Library](https://jquery.com/)
 
 ### Media
 - Save Icon: Save by Warunk Icon from NounProject.com (Free Use with Embedded attribution if larger than 100px & Include in bibliography, caption, on item or tag)
