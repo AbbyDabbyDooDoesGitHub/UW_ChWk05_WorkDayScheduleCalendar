@@ -1,15 +1,12 @@
 # UW_ChWk05_WorkDayScheduleCalendar
 ## Overview
-
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
-
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. Use the [Moment.js](https://momentjs.com/) library to work with date and time. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 ### Link to Web App: 
-<!-- LINK TO DEPLOYMENT HERE -->
+https://abbydabbydoodoesgithub.github.io/UW_ChWk05_WorkDayScheduleCalendar/
 
 ### App Preview:
-<!-- Replace with path to screenshot   ![My Password Generator Screenshot](./Assets/MyPasswordGeneratorScreenShot.PNG "My Password Generator Screenshot") -->
+![My Workday Scheduler Screenshot](./Assets/MyAppScreenshot_WorkdayScheduler.PNG "My Workday Scheduler Screenshot")
 
 ## Notes
 
@@ -44,14 +41,13 @@ THEN the saved events persist
 ## Resources Used 
 
 ### Technology
+-[Moment.js](https://momentjs.com/)
+-[Bootstrap Framework](https://getbootstrap.com/)
+-[jQuery Library](https://jquery.com/)
 
 ### Media
-
 - Save Icon: Save by Warunk Icon from NounProject.com (Free Use with Embedded attribution if larger than 100px & Include in bibliography, caption, on item or tag)
 - Checkmark Icon: Ok by Mert Güler from NounProject.com (Free Use with Embedded attribution if larger than 100px & Include in bibliography, caption, on item or tag)
-
-
-
 
 
 
