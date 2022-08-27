@@ -6,7 +6,7 @@ Create a simple calendar application that allows a user to save events for each 
 https://abbydabbydoodoesgithub.github.io/UW_ChWk05_WorkDayScheduleCalendar/
 
 ### App Preview:
-![My Workday Scheduler Screenshot](./Assets/MyAppScreenshot_WorkdayScheduler.PNG "My Workday Scheduler Screenshot")
+![My Workday Scheduler Screenshot](./Assets/Images/MyAppScreenshot_WorkdayScheduler.PNG "My Workday Scheduler Screenshot")
 
 ## Notes
 
