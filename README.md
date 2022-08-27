@@ -6,11 +6,11 @@ Create a simple calendar application that allows a user to save events for each 
 https://abbydabbydoodoesgithub.github.io/UW_ChWk05_WorkDayScheduleCalendar/
 
 ### App Preview:
-![My Workday Scheduler Screenshot](./Assets/Images/MyAppScreenshot_WorkdayScheduler.PNG "My Workday Scheduler Screenshot")
+![My Workday Scheduler Screenshot](./Assets/Images/MyAppScreenshot_WorkdayScheduler.png "My Workday Scheduler Screenshot")
 
 ## Notes
 
-<!-- Use this area to add personal notes on implementation, etc -->
+Modified the starter code and did heavy JavaScript coding to allow the app to dynamically function to meet the specified uses. Added date check functionality to make sure the data shown is from today, not previous days. 
 
 ## User Story
 
